@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>群众需求与留言管理 --&lt;<{$siteconfig.sitename}>&gt;</title>
+
+<!-- CSS -->
+<link href="template/default/admin/style/css/transdmin.css" rel="stylesheet" type="text/css" media="screen" />
+<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="template/default/admin/style/css/ie6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="template/default/admin/style/css/ie7.css" /><![endif]-->
+
+<!-- JavaScripts-->
+<script type="text/javascript" src="template/default/admin/style/js/jquery.js"></script>
+<script type="text/javascript" src="template/default/admin/style/js/jNice.js"></script>
+</head>
+
+<body>
+	<div id="wrapper">
+    	<{include file="default/admin/head.html"}>
+        
+        <div id="containerHolder">
+		<div id="container">
+        	<div id="sidebar">
+                    <ul class="sideNav">
+                        <li><a href="<{spUrl c=contactus a=index_c_d state=1}>" >Demands Management</a></li>
+                        <li><a href="<{spUrl c=contactus a=index_c_d state=0}>" class="active">Examine Demands</a></li>
+                    	<li><a href="<{spUrl c=contactus a=index_c_d state=0}>" >Demands Reply</a></li>                    	
+                    	
+                    
+                    </ul>
+                    <!-- // .sideNav -->
+                </div>    
+                <!-- // #sidebar -->
+                
+                <!-- h2 stays for breadcrumbs -->
+                <h2><a href="#">Demands</a> &raquo; <a href="#"  class="active">Examine Demands</a></h2>
+                
+                <div id="main">
+                    <form action="" class="jNice">
+			<h3>Demands List</h3>
+                    	<table cellpadding="0" cellspacing="0">
+                            <{foreach from=$results item=demand}> 
+                            <tr <{cycle values="class='odd',class=''"}>>
+                                <td>★ Time：【<{$demand.date}>】 Customer：【<{$demand.customer_name}>】--<{$demand.customer_demand}></td>
+                                <td class="action"><a href="<{spUrl c=contactus a=pass_message id=$message.id state=0}>" class="view">UnPass</a><a href="<{spUrl c=contactus a=update_m id=$message.id}>" class="edit">Reply</a><a href="<{spUrl c=contactus a=delete_m id=$message.id}>" onclick="return confirm('确定删除该条记录吗？')" class="delete">Delete</a></td>
+                            </tr>  
+                            <{/foreach}>
+                        </table>
+                    </form><br/>
+                    <hr/>
+                    <p>
+                        <{if $pager}>
+                        本栏目共有信息<{$pager.total_count}>条，共有<{$pager.total_page}>页（每页<{$pager.page_size}>条信息）：
+                        <!--在当前页不是第一页的时候，显示前页和上一页-->
+                        <{if $pager.current_page != $pager.first_page}>
+                        <a href="<{spUrl c=contactus a=index_c_m state=$smarty.get.state page=$pager.first_page}>">前页</a> | 
+                        <a href="<{spUrl c=contactus a=index_c_m state=$smarty.get.state page=$pager.prev_page}>">上一页</a> | 
+                        <{/if}>
+                        <!--开始循环页码，同时如果循环到当前页则不显示链接-->
+                        <{foreach from=$pager.all_pages item=thepage}>
+                        <{if $thepage != $pager.current_page}>
+                        <a href="<{spUrl c=contactus a=index_c_m state=$smarty.get.state page=$thepage}>"><{$thepage}></a>
+                        <{else}>
+                        <b><{$thepage}></b>
+                        <{/if}>
+                        <{/foreach}>
+                        <!--在当前页不是最后一页的时候，显示下一页和后页-->
+                        <{if $pager.current_page != $pager.last_page}>
+                        | 
+                        <a href="<{spUrl c=contactus a=index_c_m state=$smarty.get.state page=$pager.next_page}>">下一页</a> | 
+                        <a href="<{spUrl c=contactus a=index_c_m state=$smarty.get.state page=$pager.last_page}>">后页</a>
+                        <{/if}>
+                        <{/if}>
+                    </p> 
+                    </br>
+                </div>
+                <!-- // #main -->                
+                <div class="clear"></div>
+            </div>
+            <!-- // #container -->
+        </div>	
+        <!-- // #containerHolder -->
+        
+        <{include file="default/admin/footer.html"}>
+    </div>
+    <!-- // #wrapper -->
+</body>
+</html>

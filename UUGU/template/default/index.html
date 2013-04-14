@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="<{$siteconfig.keywords}>" />
+<meta name="description" content="<{$siteconfig.description}>" />
+<title>UUGU TEAM--&lt;<{$siteconfig.sitename}>&gt;</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />	
+<link href="css/featuredcontent.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/style.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" ></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.5.3/jquery-ui.min.js" ></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#featured > ul").tabs({fx:{opacity: "toggle"}}).tabs("rotate", 5000, true);
+	});
+</script>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <div id="wrapper">
+      <{include file="default/head.html"}>
+      <div id="header"><div id="featured" >
+              <ul class="ui-tabs-nav">
+                  <li class="ui-tabs-nav-item ui-tabs-selected" id="nav-fragment-1"><a href="#fragment-1"><img src="images/image1-small.jpg" alt="" />UUGU TEAM 项目<br />
+                          本团队官网的项目开发，正在进行时...</a></li>
+                  <li class="ui-tabs-nav-item" id="nav-fragment-2"><a href="#fragment-2"><img src="images/image2-small.jpg" alt="" />校友录<br />
+                          本项目策划中...</a></li>
+                  <li class="ui-tabs-nav-item" id="nav-fragment-3"><a href="#fragment-3"><img src="images/image3-small.jpg" alt="" />校庆信息管理系统<br />
+                          为校庆信息管理专门定制站点系统，采用S2SH框架完成开发。</a></li>
+              </ul>
+                  
+              <!-- First Content -->
+              <div id="fragment-1" class="ui-tabs-panel" style="">
+                  <img src="images/image1.jpg" alt="" />
+                  <div class="info" >
+                      <h2><a href="<{spUrl c=projects}>" >UUGU TEAM网站项目</a></h2>
+                      <p>本项目子团队建立起开始执行，您所预览的页面即在建设过程中，在此期间欢迎提出您的宝贵意见...开发日期：2011.9.20-？<a href="#" >Read More...</a></p>
+                  </div>
+              </div>
+                  
+              <!-- Second Content -->
+              <div id="fragment-2" class="ui-tabs-panel ui-tabs-hide" style="">
+                  <img src="images/image2.jpg" alt="" />
+                  <div class="info" >
+                      <h2><a href="<{spUrl c=projects}>" >校友录</a></h2>
+                      <p>预计开发项目，还未真正开始执行...<a href="#" >Read More...</a></p>
+                  </div>
+              </div>
+                  
+              <!-- Third Content -->
+              <div id="fragment-3" class="ui-tabs-panel ui-tabs-hide" style="">
+                  <img src="images/image3.jpg" alt="" />
+                  <div class="info" >
+                      <h2><a href="<{spUrl c=projects}>" target="_blank" >高青一中校庆新闻管理系统</a></h2>
+                      <p>本项目采用S2SH（Struts2+Spring+Hibernate）框架开发，作为开源项目，已提交到到Google Code代码托管（SVN），项目名（InfoView）....<a href="projects.php" >Read More...</a></p>
+                  </div>
+              </div>
+                  
+          </div></div>
+    <div id="content">
+      <div id="leftsection">
+          <h1>Welcome to Our Website</h1>
+        <p><img src="images/pic01.gif" alt="" width="175" height="139" class="leftimg" />
+            &nbsp;&nbsp;&nbsp;&nbsp;欢迎来到我们的官方站点，从一定程度上来讲，您是对我们感兴趣了，所以您才来到此对我们更深的了解。<br/>&nbsp;&nbsp;&nbsp;&nbsp;我们团队的精神：坚持自己的兴趣是最大的原动力！我们服务于广大广大网民群众，为任何人提供计算机软件及其IT相关需求需求。我们还在成长，希望您的支持！<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;包含领域：计算机网站，桌面数据管理软件，安全检测，系统部署，计算机故障解决，远程故障解决等。当然这些并不是我们的所有业务，如果您有其他的计算机方面的需求，您尽可能和我们取得联系，我们会在第一时间给与您答复。</p>
+        
+        <h1>&nbsp;</h1>
+        <div id="list" float="left" style="width: 275px;">
+            <ul>
+                <li><h4><span>UUGU News  <span style="float: right"><a href="<{spUrl c=news a=index item=1}>">More</span></a></span></h4></li>
+                <{foreach from=$somenews item=news}>
+                <span><a href="<{spUrl c=news a=show_news news_item=$news.news_item news_id=$news.news_id}>"> 【<{$news.news_type}>】<{$news.news_name|truncate:9:"...":true}>  <span style="float: right"><{$news.news_date}></span></a></span><br/>
+                <{/foreach}>
+            </ul>
+        </div>
+        <div id="list" style="width: 275px;">
+             <ul>
+                 <li><h4><span>Notice LIST  <span style="float: right"><a href="<{spUrl c=news a=index item=2}>">More</span></a></span></h4></li>
+                <{foreach from=$somenotes item=notes}>
+                <span><a href="<{spUrl c=news a=show_news news_item=$notes.news_item news_id=$notes.news_id}>"> 【<{$notes.news_type}>】<{$notes.news_name|truncate:9:"...":true}>  <span style="float: right"><{$notes.news_date}></span></a></span><br/>
+                <{/foreach}>
+            </ul>
+        </div>
+       
+      </div>
+      <div id="right">
+        <h1>Latest Project</h1>
+        <p><img src="images/pic02.gif" width="258" height="89" alt="" /></p>
+        <p><b>【高青一中校庆信息管理系统】</b><br/><br/>项目采用S2SH(Struts2+Spring+Hibernate)框架开发，开发周期(2011.8.20-2011.10.20)。作为开源项目，已提交到到Google Code代码托管（SVN），项目名（InfoView）。</p>
+        <h1>&nbsp;</h1>
+        <h1>Services List</h1>
+        <p>
+          <img src="images/arrow.png" alt="" width="19" height="18" align="top" /> 网站系统设计 &amp; 开发<br />
+          <img src="images/arrow.png" alt="" width="19" height="18" align="top" /> 企业、门户网站搭建维护及其安全检测<br/>
+          <img src="images/arrow.png" alt="" width="19" height="18" align="top" /> 桌面信息管理系统开发<br />
+          <img src="images/arrow.png" alt="" width="19" height="18" align="top" /> 计算机软件专业设计<br />
+          <img src="images/arrow.png" alt="" width="19" height="18" align="top" /> PC操作系统部署、修理及维护<br />
+          <img src="images/arrow.png" alt="" width="19" height="18" align="top" /> 计算机系统 &amp; 软件故障解决<br/>         
+          <br/>
+          <li>以上业务列表不到表全部业务，我们正在努力发展，希望在次发展中能够获得您的宝贵意见，和积极加入。</li>
+        </p>          
+      </div>
+    </div>
+  </div>
+  <{include file="default/footer.html"}>
+</form>
+</body>
+</html>

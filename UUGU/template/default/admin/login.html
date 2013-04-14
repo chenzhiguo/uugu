@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>UUGU TEAM SYS LOGIN</title>
+<style type="text/css">
+    #all {margin-left:auto; margin-right:auto; text-align: center;width: 540px;}
+    body {text-align:center;}
+    #main {background:url(template/default/admin/images/login_mid.gif); height: 250px;  text-align:center;}
+    #title {height:66px;margin-top: 120px;}
+    #login { margin-top: 0px; width: 420px; margin-left: auto; margin-right:auto;}
+    #btm_left {background:url(template/default/admin/images/login_btm_left.gif) no-repeat; width:21px; height:21px; float:left;}
+    #btm_mid {background:url(template/default/admin/images/login_btm_mid.gif); width:498px; height:21px; float:left;}
+    #btm_right {background:url(template/default/admin/images/login_btm_right.gif) no-repeat; width:21px; height:21px; float:left;}
+</style>
+<script type="text/javascript" language="javascript">
+    function CheckPost()
+    {
+	if (login_form.username.value=="")
+	{
+		alert("请填写用户名~~~亲！");
+		myform.username.focus();
+		return false;
+	}
+	
+	if (login_form.password.value=="")
+	{
+		alert("请填写密码~~~亲！");
+		login_form.password.focus();
+		return false;
+	}
+    }					 
+</script>
+
+</head>
+<body>
+<div id="all">
+    <div id="title"><img src="template/default/admin/images/login_title.gif" /></div>
+    <div id="main" >
+        <form action="<{spUrl c=admin a=login}>" method="post" name="login_form" onsubmit="return CheckPost();">
+        <br/><br/>
+        <table id="login">
+        	<tr>
+            	<th>U S E R N A M E : </th>
+                <td><input type="text" name="username" id="username" size="28" style="background:url(template/default/admin/images/username_bg.gif) left no-repeat #FFF; border:1px #ccc solid;height: 20px; font-family:Arial, Helvetica, sans-serif; font-size:14px; font-weight: 800; margin:0; padding-left: 24px;" /></td>
+            </tr>           
+            <tr><td></td><td></td></tr>
+            <tr><td></td><td></td></tr>
+            <tr><td></td><td></td></tr>
+            <tr><td></td><td></td></tr>
+            <tr><td></td><td></td></tr>
+            <tr>
+            	<th>P A S S W O R D : </th>
+                <td><input type="password" name="password" id="password" size="28" style="background:url(template/default/admin/images/password_bg.gif) left no-repeat #FFF; border: 1px #ccc solid; height: 20px; font-family:Arial, Helvetica, sans-serif; font-size:14px; font-weight: 800; margin:0; padding-left: 24px;" /></td>
+            </tr>
+             <tr><td></td><td></td></tr>
+            <tr><td></td><td></td></tr>
+            <tr><td></td><td></td></tr>
+            <tr><td></td><td></td></tr>
+            <tr><td></td><td></td></tr>
+            <tr>
+            	<th>P A S S C O D E : </th>
+                <td><input type="text" name="passcode" id="passcode" size="18" style="background:url(template/default/admin/images/password_bg.gif) left no-repeat #FFF; float: left;border: 1px #ccc solid; height: 20px; font-family:Arial, Helvetica, sans-serif; font-size:14px; font-weight: 800; margin-left:10px; padding-left: 24px;" /> <a href=""><img src="checkpic.php"/></a></td>
+            </tr>
+            <tr><td></td><td></td></tr>
+            <tr><td></td><td></td></tr>
+            <tr><td></td><td></td></tr>
+            <tr><td><br/></td><td></td></tr>
+            <tr>
+            	<td colspan="2">
+                <center>
+                    <input type="submit" name="submit" value="" style="background:url(template/default/admin/images/login.gif) no-repeat; width: 75px; height: 28px; border:0px" />
+            	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            	  <input type="reset" name="reset" value="" style="background:url(template/default/admin/images/cancel.gif) no-repeat; width: 75px; height: 28px; border:0px" />
+                </center>
+               </td>
+           	</tr>
+        </table>
+	</form>
+        <br/><br/>
+        <center><a href="index.php">返回首页</a></center>
+    </div>
+    <div id="btm">
+        <div id="btm_left"></div>
+        <div id="btm_mid"></div>
+        <div id="btm_right"></div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>CONTACT US【联系我们】--&lt;<{$siteconfig.sitename}>&gt;</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />	
+
+<link href="css/featuredcontent.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" ></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.5.3/jquery-ui.min.js" ></script>
+<script charset="utf-8" src="include/kindeditor/kindeditor-min.js"></script>
+<script charset="utf-8" src="include/kindeditor/lang/zh_CN.js"></script>
+<script>
+    var editor;
+    KindEditor.ready(function(K) {
+        editor = K.create('textarea[name="content"]', {
+            resizeType : 1,
+            allowPreviewEmoticons : false,
+            allowImageUpload : false,
+            items : [
+                'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+                'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+                'insertunorderedlist', '|', 'emoticons', 'image']
+        });
+    });
+    function CheckPost()
+{
+	if (myform.username.value=="")
+	{
+		alert("请填写用户名~~~亲！");
+		myform.username.focus();
+		return false;
+	}
+	if (myform.email.value=="")
+	{
+		alert("请填写邮件地址~~~亲！");
+		myform.email.focus();
+		return false;
+	}
+	if (editor.isEmpty())
+	{
+		alert("必须要填写您的需求内容~~~亲！");
+		myform.content.focus();
+		return false;
+	}
+}
+</script>
+</head>
+
+<body>
+<!--<form id="form1" name="form1" method="post" action="">  -->
+  <div id="wrapper">
+ <{include file="default/head.html"}>
+    <div id="content">
+        <div id="leftsection">
+            <h1>Contact Us</h1>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;在此，您告诉我们您的需求是什么？我们将会进一步和您取得联系！为了更好地为您服务和合作，请您如实填写信息，以确定我们会尽快的和您取得联系，您的通讯方式我们承诺保密！</p>
+            <p>&nbsp;</p>
+            <div id="contact">
+                <form action= "<{spUrl c=contactus a=save_demands}>" name="myform" method="post" onsubmit="return CheckPost();">
+                    <label>姓名：</label>
+                    <input name="username" type="text" />
+                    <br />
+                    <label>邮件：</label>
+                    <input name="email" type="text" />
+                    <br />
+                    <label>需求：</label>
+                    <textarea name="content" width="200px" rows="8" wrap="virtual"></textarea>
+                    <br />
+                    <label>验证码：</label>
+                    <input style="background: url(checkpic.php) #FFF no-repeat; background-position: right;" name="passcode" type="text" />
+                    <br />
+                    <label></label>
+                    <input type="submit" value="" name="submit" style="width:87px; height: 32px; padding-left: 0; padding-top: 0; border:0px; background: url(images/send.gif) no-repeat;" />
+                                       
+                </form>
+            </div>
+        </div>
+      <div id="right">
+        <h1>Latest Project</h1>
+        <p><img src="images/pic04.gif" width="258" height="89" alt="" /></p>
+        <p>【NSS官网项目】---项目采用PHP相关框架开发，开发周期（2011.11.20-2011.12.—），项目名（NSS）。</p>
+        <h1>&nbsp;</h1>
+        <p><img src="images/pic05.gif" width="258" height="89" alt="" /></p>
+        <p><b>【待续】</b><br/>待续...</p>
+      </div>
+    </div>
+  </div>
+<{include file="default/footer.html"}>
+<!--</form>-->
+</body>
+</html>

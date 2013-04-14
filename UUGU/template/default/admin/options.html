@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>系统参数配置--&lt;<{$siteconfig.sitename}>&gt;</title>
+
+<!-- CSS -->
+<link href="template/default/admin/style/css/transdmin.css" rel="stylesheet" type="text/css" media="screen" />
+<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="template/default/admin/style/css/ie6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="template/default/admin/style/css/ie7.css" /><![endif]-->
+
+<!-- JavaScripts-->
+<script type="text/javascript" src="template/default/admin/style/js/jquery.js"></script>
+<script type="text/javascript" src="template/default/admin/style/js/jNice.js"></script>
+</head>
+
+<body>
+	<div id="wrapper">
+    	<{include file="default/admin/head.html"}>
+        
+        <div id="containerHolder">
+            <div id="container">
+        	<div id="sidebar">
+                	<ul class="sideNav">
+                    	<li><a href="<{spUrl c=admin a=options}>" class="active">Update Options</a></li>
+                    	<li><a href="<{spUrl c=admin a=repwd}>">Update Password</a></li>
+                    	<li><a href="#">Training &amp; Support</a></li>                    
+                    </ul>
+                    <!-- // .sideNav -->
+                </div>    
+                <!-- // #sidebar -->
+                
+                <!-- h2 stays for breadcrumbs -->
+                <h2><a href="#">Options</a> &raquo; <a href="#" class="active">Update Options</a></h2>
+                
+                <div id="main">
+                    <form action="<{spUrl c=admin a=update_options}>" method="post" class="jNice">
+                        <input type="hidden" name="conid" value="<{$siteconfig.conid}>" />
+			<h3>System Options</h3>
+                    	<fieldset>
+                            <p><label>Website Name:  <span style="float: right;padding-right: 250px">Short Name:</span></label>
+                                <input type="text" name="sitename" value="<{$siteconfig.sitename}>" class="text-long" /><input type="text" name="shortname" value="<{$siteconfig.shortname}>" class="text-medium" style="margin-left:43px"/>
+                            </p>
+                            <p><label>Website Url:  <span style="float: right;padding-right: 258px">Key Words:</span></label>
+                                <input type="text" name="siteurl" value="<{$siteconfig.siteurl}>" class="text-long" /><input type="text" name="keywords" value="<{$siteconfig.keywords}>" class="text-long" style="margin-left:43px"/>
+                            </p>
+                            <p><label>Description:  <span style="float: right;padding-right: 232px">Record Account:</span></label>
+                                <input type="text" name="description" value="<{$siteconfig.description}>" class="text-long" /><input type="text" name="icp" value="<{$siteconfig.icp}>" class="text-long" style="margin-left:43px"/>
+                            </p>
+                           
+                            <p><label>Site Stats Code:</label><textarea name="statistics" rows="1" cols="1"><{$siteconfig.statistics}></textarea></p>
+                       </fieldset>
+                        <h3>Admin Info</h3>
+                        <fieldset>
+                            <p><label>Admin Name:  <span style="float: right;padding-right: 286px">E-Mail:</span></label>
+                                <input type="text" name="linkman" value="<{$siteconfig.linkman}>" class="text-long" /><input type="text" name="email" value="<{$siteconfig.email}>" class="text-medium" style="margin-left:43px"/>
+                            </p>
+                            <p><label>Telphone:  <span style="float: right;padding-right: 283px">Mobile:</span></label>
+                                <input type="text" name="tel" value="<{$siteconfig.tel}>" class="text-long" /><input type="text" name="mobile" value="<{$siteconfig.mobile}>" class="text-long" style="margin-left:43px"/>
+                            </p>
+                            <p><label>QQ:  <span style="float: right;padding-right: 275px">Address:</span></label>
+                                <input type="text" name="qq" value="<{$siteconfig.qq}>" class="text-long" /><input type="text" name="address" value="<{$siteconfig.address}>" class="text-long" style="margin-left:43px"/>
+                            </p>                        
+                       </fieldset>
+                        <center style="padding-left: 43%;"><span><input type="submit" value=" Submit & Update " /></span></center>
+                    </form>
+                    <br/><h3>&nbsp;</h3>
+                </div>
+                <!-- // #main -->
+                
+                <div class="clear"></div>
+            </div>
+            <!-- // #container -->
+        </div>	
+        <!-- // #containerHolder -->
+        
+        <{include file="default/admin/footer.html"}>
+    </div>
+    <!-- // #wrapper -->
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>回复留言 --&lt;<{$siteconfig.sitename}>&gt;</title>
+
+<!-- CSS -->
+<link href="template/default/admin/style/css/transdmin.css" rel="stylesheet" type="text/css" media="screen" />
+<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="template/default/admin/style/css/ie6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="template/default/admin/style/css/ie7.css" /><![endif]-->
+
+<!-- JavaScripts-->
+<script type="text/javascript" src="template/default/admin/style/js/jquery.js"></script>
+<script type="text/javascript" src="template/default/admin/style/js/jNice.js"></script>
+<script charset="utf-8" src="include/kindeditor/kindeditor.js"></script>
+<script charset="utf-8" src="include/kindeditor/lang/zh_CN.js"></script>
+<link rel="stylesheet" href="include/kindeditor/themes/default/default.css" />
+<link rel="stylesheet" href="include/kindeditor/plugins/code/prettify.css" />
+<script charset="utf-8" src="include/kindeditor/plugins/code/prettify.js"></script>
+<script>
+    KindEditor.ready(function(K) {
+        var editor1 = K.create('textarea[name="content"]', {
+            cssPath : 'include/kindeditor/plugins/code/prettify.css',
+            uploadJson : 'include/kindeditor/php/upload_json.php',
+            fileManagerJson : 'include/kindeditor/php/file_manager_json.php',
+            allowFileManager : true,
+            afterCreate : function() {
+                var self = this;
+                K.ctrl(document, 13, function() {
+                    self.sync();
+                    K('form[name=example]')[0].submit();
+                });
+                K.ctrl(self.edit.doc, 13, function() {
+                    self.sync();
+                    K('form[name=example]')[0].submit();
+                });
+            }
+        });
+        var editor2 = K.create('textarea[name="mrcontent"]', {
+            cssPath : 'include/kindeditor/plugins/code/prettify.css',
+            uploadJson : 'include/kindeditor/php/upload_json.php',
+            fileManagerJson : 'include/kindeditor/php/file_manager_json.php',
+            allowFileManager : true,
+            afterCreate : function() {
+                var self = this;
+                K.ctrl(document, 13, function() {
+                    self.sync();
+                    K('form[name=example]')[0].submit();
+                });
+                K.ctrl(self.edit.doc, 13, function() {
+                    self.sync();
+                    K('form[name=example]')[0].submit();
+                });
+            }
+        });
+        prettyPrint();
+    });
+</script>
+</head>
+
+<body>
+	<div id="wrapper">
+    	<{include file="default/admin/head.html"}>
+        
+        <div id="containerHolder">
+            <div id="container">
+        	<div id="sidebar">
+                    <ul class="sideNav">
+                        <li><a href="<{spUrl c=contactus a=index_c_m state=1}>" class="active">Messages Management</a></li>
+                        <li><a href="<{spUrl c=contactus a=index_c_m state=0}>" >Examine Messages</a></li>                    	  
+                    </ul>
+                    <!-- // .sideNav -->
+                </div>    
+                <!-- // #sidebar -->            
+                <!-- h2 stays for breadcrumbs -->
+                <h2><a href="<{spUrl c=contactus a=index_c_m state=1}>">Message</a> &raquo; <a href="#" class="active">Reply Message</a></h2>
+                
+                <div id="main">
+                    <form action="<{spUrl c=contactus a=addrems}>" method="post" class="jNice">
+			<h3>Reply Message</h3>
+                    	<fieldset>
+                        <{foreach from=$msinfo item=msrow}>
+                            <input type="hidden" name="id" value="<{$msrow.id}>"/>
+                            <p><label>Name:</label>
+                                <input type="text" name="name" class="text-long" value="<{$msrow.name}>"/></p>
+                            <p><label>Message Content:</label><textarea name="content" style="width: 100%;height: 270px;"><{$msrow.content}></textarea></p>
+                            <input type="hidden" name="mrid" value="<{$msrow.msreply.mrid}>"/>
+                            <p><label>Reply Content:</label><textarea name="mrcontent" style="width: 100%;height: 270px;"><{$msrow.msreply.mrcontent}></textarea></p>
+                        <{/foreach}>
+                            <input type="submit" value="Submit" />
+                        </fieldset>
+                    </form>
+                </div>
+                <!-- // #main -->
+                
+                <div class="clear"></div>
+            </div>
+            <!-- // #container -->
+        </div>	
+        <!-- // #containerHolder -->
+        
+        <{include file="default/admin/footer.html"}>
+    </div>
+    <!-- // #wrapper -->
+</body>
+</html>

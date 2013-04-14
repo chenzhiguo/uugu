@@ -1,0 +1,377 @@
+@charset "utf-8";
+/* CSS Document */
+
+#wrapper {
+	width: 950px;
+	margin: 0 auto;
+	color: #909090;
+	position: relative;
+}
+img {
+		outline:0; 
+		border:0;
+}
+body {
+	margin: 0px;
+	padding: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	background-image: url(../images/bg.gif);
+	background-repeat: repeat-x;
+	background-color: #212121;
+	line-height: 20px;
+}
+#topbar {
+	height: 121px;
+}
+#logo {
+	float: left;
+	width: 160px;
+	margin: 20px 0 0 30px;
+}
+#socialbar {
+	float: right;
+	width: 190px;
+	margin: 20px 20px 0 0;
+}
+/* Horizontal Tooltips menu */	
+	#menu {
+	/* you must set it to relative, so that you can use absolute position for children elements */
+		position:relative;
+	text-align:center;
+	width:200px;
+	height:40px;
+	}
+	
+	#menu ul {
+	/* remove the list style and spaces*/
+		margin:0;
+	padding:0;
+	list-style:none;
+	display:inline;
+	/* position absolute so that z-index can be defined */
+		position:absolute;
+	/* center the menu, depend on the width of you menu*/
+		left:30px;
+	top:0;
+		
+	}
+	
+	#menu ul li {
+		
+		/* give some spaces between the list items */
+		margin:0 5px; 
+		
+		/* display the list item in single row */
+		float:left;
+	}
+	
+	#menu #box {
+		
+		/* position absolute so that z-index can be defined and able to move this item using javascript */
+		position:absolute; 
+		left:0; 
+		top:0; 
+		z-index:200; 
+
+		/* image of the right rounded corner */
+		background:url(../images/tail.png) no-repeat right center; 
+		height:35px;
+
+
+		/* add padding 8px so that the tail would appear */
+		padding-right:8px;
+		
+		/* set the box position manually */
+		margin-left:5px;
+		
+	}
+	
+	#menu #box .head {
+		/* image of the left rounded corner */
+		background:url(../images/head.png) no-repeat 0 0;
+		height:35px;
+		color:#eee;
+		
+		/* force text display in one line */
+		white-space:nowrap;
+
+		/* set the text position manually */
+		padding-left:8px;
+		padding-top:12px;
+	}
+#nav {
+	height: 55px;
+	position: relative;
+}
+/* Drop Down Menu */
+ul.topnav {
+	list-style: none;
+	padding: 1px 20px 0 30px;
+	margin: 0;
+	float: left;
+	width: 800px;
+	font-size: 1.1em;
+
+}
+ul.topnav li {
+	float: left;
+	margin: 0;
+	padding: 0 25px 0 0;
+	position: relative; /*--Declare X and Y axis base--*/
+}
+ul.topnav li a{
+	padding: 13px 5px;
+	color: #909090;
+	display: block;
+	text-decoration: none;
+	float: left;
+}
+ul.topnav li a:hover{
+	background: url(../images/topnav_over.png) no-repeat center top;
+}
+ul.topnav li span { /*--Drop down trigger styles--*/
+	width: 16px;
+	height: 19px;
+	float: left;
+	margin-top:13px;
+	background: url(../images/orangearrow.png) no-repeat center top;
+}
+ul.topnav li span.subhover {
+	background: url(../images/orangearrow2.png) no-repeat center top;
+	background-position: center top; cursor: pointer;} /*--Hover effect for trigger--*/
+ul.topnav li ul.subnav {
+	list-style: none;
+	position: absolute; /*--Important - Keeps subnav from affecting main navigation flow--*/
+	left: 0; top: 35px;
+	background: #333;
+	margin: 0; padding: 0;
+	display: none;
+	float: left;
+	width: 170px;
+	z-index:100;
+	-moz-border-radius-bottomleft: 5px;
+	-moz-border-radius-bottomright: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	border: 1px solid #111;
+}
+ul.topnav li ul.subnav li{
+	margin: 0; padding: 0;
+	border-top: 1px solid #252525; /*--Create bevel effect--*/
+	border-bottom: 1px solid #444; /*--Create bevel effect--*/
+	clear: both;
+	width: 170px;
+}
+html ul.topnav li ul.subnav li a {
+	float: left;
+	width: 145px;
+	background: #333 url(../images/whitearrow.png) no-repeat 5px center;
+	padding-left: 20px;
+}
+html ul.topnav li ul.subnav li a:hover { /*--Hover effect for subnav links--*/
+	background: #222 url(../images/whitearrow.png) no-repeat 5px center; 
+}
+#header {
+	height: 280px;
+	clear: both;
+	width: 892px;
+	margin: 15px auto;
+	background-image: url(../images/headerbg.gif);
+	background-repeat: no-repeat;
+}
+#content {
+	width: 895px;
+	margin: 30px auto;
+	overflow: hidden;
+}
+h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 25px;
+	line-height: 25px;
+	font-weight: bold;
+	color: #FFF;
+	letter-spacing: -1px;
+	margin: 0px;
+}
+h3 {
+	font-size: 20px;
+	line-height: 35px;
+	font-weight: bold;
+	color: #FFF;
+	letter-spacing: -1px;
+	margin: 0;
+	padding: 0;
+}
+h4 {
+    font-size:15px;
+    font-weight: bold;
+    color: #909090;
+    margin: 0;
+    padding: 0;
+}
+#leftsection {
+	float: left;
+	width: 563px;
+}
+#right {
+	float: right;
+	width: 270px;
+}
+#content p {
+	margin: 0px;
+	padding-top: 12px;
+}
+#content a:hover{
+    color:#FFF;
+}
+.leftimg {
+	float:left;
+        border:1px #FFF solid;
+	margin-right: 10px;
+	display: block;
+}
+/* === Footer One Section === */
+#footer {
+	height: 210px;
+	width: 100%;
+	clear: both;
+	background-color: #181818;
+}
+#bottomcontent {
+	margin: 0 auto;
+	color: #909090;
+	width: 900px;
+	height: 190px;
+	padding-top: 15px;
+}
+
+#list {
+	float: left;
+	width: 275px;	
+	padding-right: 5px;
+}
+#list ul {
+	margin: 0px;
+	padding: 0px;
+}
+#list li {
+	background-color: #0F0F0F;
+	list-style-type: none;
+	padding: 2px 0 2px 25px;
+	margin-bottom: 3px;
+	background-image: url(../images/arrow2.gif);
+	background-repeat: no-repeat;
+	background-position: 6px;
+}
+
+#b1 {
+	float: left;
+	width: 270px;
+	padding-right: 35px;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #464646;
+	height: 190px;
+}
+#b3 {
+	float: right;
+	width: 200px;
+	padding-left: 30px;
+}
+#b2 {
+	float: left;
+	width: 270px;
+	margin-left: 45px;
+	padding-right: 40px;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #464646;
+	height: 190px;
+}
+#b2 ul {
+	margin: 0px;
+	padding: 0px;
+}
+#b2 li {
+	background-color: #0F0F0F;
+	list-style-type: none;
+	padding: 2px 0 2px 25px;
+	margin-bottom: 3px;
+	background-image: url(../images/arrow2.gif);
+	background-repeat: no-repeat;
+	background-position: 6px;
+}
+
+#footer a:link {
+	color: #575757;
+	text-decoration: none;
+}
+#footer a:hover {
+	color: #ffffff;
+	text-decoration: none;
+}
+/* === Footer Two Section === */
+#footer2 {
+	background-image: url(../images/bottombg.jpg);
+	background-repeat: repeat-x;
+	height: 52px;
+}
+#bottomcontent2 {
+	width: 900px;
+	margin: 0 auto;
+	color: #909090;
+	padding-top: 8px;
+	font-size: 12px;
+	line-height: 35px;
+}
+#bottomcontent2  a:link {
+	color: #14638E;
+	text-decoration: none;
+}
+#bottomcontent2  a:hover {
+	color: #ffffff;
+	text-decoration: none;
+}
+#contact {
+	color: #696969;
+	padding: 5px;
+	margin-top: 10px;
+}
+#contact input {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	padding: 6px;
+	border: 1px solid #E7E9EB;
+	width: 230px;
+	margin: 5px 0 5px 0;
+	background-color: #FFF;
+	color: #333333;
+}
+#contact label {
+	float: left;
+	width: 80px;
+	display: block;
+	padding: 3px;
+	margin: 3px 0 3px 0;
+	clear: both;
+	color: #999;
+}
+#contact textarea {
+	border: 1px solid #E7E9EB;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	padding: 6px;
+	width: 440px;
+	margin: 5px 0 5px;
+	background-color: #FFF;
+	color: #333333;
+}
+a{
+    color: #696969;
+    text-decoration: none;
+}
+
+a:visited{
+    color: #909090;
+}
